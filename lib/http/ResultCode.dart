@@ -1,5 +1,5 @@
 class ResultCode {
-   //正常返回是1
+   ///正常返回是1
   static const SUCCESS = 1;
   
   //异常返回是0

@@ -5,10 +5,11 @@ import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter_wan/common/GlobalConfig.dart';
 import 'package:flutter_wan/http/ResultCode.dart';
-
+import 'package:flutter_wan/http/WanUri.dart';
+///封装Dio请求
 class DioManager {
 
-  //单例
+  ///单例
   static DioManager _instance;
   static DioManager getInstance() {
     if(_instance == null) {
@@ -24,13 +25,13 @@ class DioManager {
       "Authorization": "token",
       // "contentType": "application/json;charset=UTF-8",
     };
-    dio.options.baseUrl = "http://192.168.11.50:8014/";
+    dio.options.baseUrl = WanUri.BASE_URL;
     dio.options.connectTimeout = 5000;
     dio.options.receiveTimeout = 3000;
 
-    //网络请求日志开关
+    ///网络请求日志开关
     dio.interceptors.add(LogInterceptor(responseBody: GlobalConfig.isDebug));
-    //缓存
+    ///缓存
     dio.interceptors.add(CookieManager(CookieJar()));
   }
 
@@ -42,7 +43,7 @@ class DioManager {
     _requestURL(url, 'post', params, successCallback, errorCallback);
   }
 
-  //网络请求
+  ///网络请求处理函数
   _requestURL(dynamic url,String method, Map<String, dynamic> params, Function successCallback, Function errorCallback) async {
     Response response;
     try {
@@ -76,7 +77,7 @@ class DioManager {
         errorResponse.statusCode = ResultCode.RECEIVE_TIMEOUT;
       }
 
-       // debug模式才打印
+       /// debug模式才打印
         if (GlobalConfig.isDebug) {
           print('请求异常: ' + e.toString());
           print('请求异常url: ' + url);
@@ -84,7 +85,7 @@ class DioManager {
           print('method: ' + dio.options.method);
         }
     }
-    // debug模式打印相关数据
+    /// debug模式打印相关数据
       if (GlobalConfig.isDebug) {
         print('请求url: ' + url);
         print('请求头: ' + dio.options.headers.toString());

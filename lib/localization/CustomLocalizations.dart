@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class CustomLocalizations {
 
   CustomLocalizations(this.isZh);
-  //是否为中文
+  ///是否为中文
   bool isZh = false;
 
   static CustomLocalizations of(BuildContext context) {

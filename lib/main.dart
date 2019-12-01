@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_wan/http/DioManager.dart';
 import 'package:flutter_wan/localization/CustomLocalizations.dart';
 import 'package:flutter_wan/localization/CustomLocalizationsDelegate.dart';
 
@@ -12,12 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Locale myLocale = Localizations.localeOf(context, nullOk: true);
     // print("languageCode: "+ myLocale.languageCode);
-DioManager.getInstance().get('DwField/findField/1', null, 
-    (data){
-print('response : ' + data.toString());
-    }, (error){
-print('response error : ' + error.toString());
-    });
 
     return MaterialApp(
       //国际化设置

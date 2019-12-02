@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_wan/localization/CustomLocalizations.dart';
 import 'package:flutter_wan/localization/CustomLocalizationsDelegate.dart';
+import 'package:flutter_wan/other_page/ScaffoldRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       // locale: Localizations.localeOf(context, nullOk: true),
       // locale: const Locale('zh', 'CN'),
 
-      title: "cl.title",
+      title: "wan",
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ScaffoldRoute(),
     );
   }
 

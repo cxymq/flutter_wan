@@ -5,15 +5,15 @@ import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
 
-class CarouselComponent extends Component<CarouselState> {
-  CarouselComponent()
+class HomeListComponent extends Component<HomeListState> {
+  HomeListComponent()
       : super(
             effect: buildEffect(),
             reducer: buildReducer(),
             view: buildView,
-            dependencies: Dependencies<CarouselState>(
+            dependencies: Dependencies<HomeListState>(
                 adapter: null,
-                slots: <String, Dependent<CarouselState>>{
+                slots: <String, Dependent<HomeListState>>{
                 }),);
 
 }

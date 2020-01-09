@@ -31,7 +31,10 @@ dependencies:
   dio: ^3.0.7
   dio_cookie_manager: 1.0.0
   cookie_jar: ^1.0.0
-  intl: ^0.15.7
+  intl: 0.16.0
+  transparent_image: 1.0.0
+
+  flutter_webview_plugin: ^0.2.1+2
 
 dev_dependencies:
   flutter_test:

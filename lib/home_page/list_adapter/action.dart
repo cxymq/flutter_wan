@@ -1,10 +1,10 @@
 import 'package:fish_redux/fish_redux.dart';
 
 //TODO replace with your own action
-enum CarouselAction { action }
+enum ListAction { action }
 
-class CarouselActionCreator {
+class ListActionCreator {
   static Action onAction() {
-    return const Action(CarouselAction.action);
+    return const Action(ListAction.action);
   }
 }

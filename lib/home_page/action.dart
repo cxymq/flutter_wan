@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter_wan/home_page/banner_component/state.dart';
+import 'package:flutter_wan/models/BannerModel.dart';
 
 enum HomeAction { 
   initBanners, //初始化轮播图列表
@@ -7,8 +8,8 @@ enum HomeAction {
  }
 
 class HomeActionCreator {
-  static Action initBannersAction(List<BannerState> banners) {
-    return const Action(HomeAction.initBanners);
+  static Action initBannersAction(List<BannerModel> banners) {
+    return Action(HomeAction.initBanners, payload: banners);
   }
 
   static Action initHomeListAction() {

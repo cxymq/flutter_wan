@@ -5,6 +5,5 @@ class GlobalConfig {
   static bool isDebug = true;
   static bool dark = false;
   static Color fontColor = Colors.black54;
-
-  static const String BANNER_URL = 'http://www.wanandroid.com/banner/json';
+  
 }

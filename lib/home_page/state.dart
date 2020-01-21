@@ -4,10 +4,11 @@ import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter_wan/global_store/state.dart';
 import 'package:flutter_wan/home_page/banner_component/state.dart';
 import 'package:flutter_wan/home_page/home_list_component/state.dart';
+import 'package:flutter_wan/models/BannerModel.dart';
 
 class HomeState implements GlobalState {
 
-  List<BannerState> bannerResult = List<BannerState>();
+  List<BannerModel> bannerResult = List<BannerModel>();
   List<HomeListState> homeList = List<HomeListState>();
 
   @override
@@ -16,7 +17,8 @@ class HomeState implements GlobalState {
   @override
   HomeState clone() {
     return HomeState()
-    ..themeColor = themeColor;
+    ..themeColor = themeColor
+    ..bannerResult = bannerResult;
   }
 
 }

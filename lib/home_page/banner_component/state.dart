@@ -6,7 +6,7 @@ class BannerState implements Cloneable<BannerState> {
   // String imagePath;
   // String title;
   // bool isLoaded;//数据是否已加载
-  List bannerResult;
+  List<BannerModel> bannerResult;
 
   BannerState({
   //   this.isClick = false

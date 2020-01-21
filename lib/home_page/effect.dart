@@ -1,7 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter_wan/common/GlobalConfig.dart';
-import 'package:flutter_wan/home_page/banner_component/state.dart';
-import 'package:flutter_wan/view_models/BannerViewModel.dart';
+import 'package:flutter_wan/http/WanHttpRequest.dart';
+import 'package:flutter_wan/models/BannerModel.dart';
 import 'action.dart';
 import 'state.dart';
 
@@ -12,8 +11,7 @@ Effect<HomeState> buildEffect() {
 }
 
 void _init(Action action, Context<HomeState> ctx) {
-BannerViewModel bannerVM = BannerViewModel();
-  bannerVM.requestResult(GlobalConfig.BANNER_URL, (isSuccess, List<BannerState> result){
+  WanHttpRequest.requestBanner((isSuccess, List<BannerModel> result){
     if(isSuccess == true) {
      ctx.dispatch(HomeActionCreator.initBannersAction(result));
     }

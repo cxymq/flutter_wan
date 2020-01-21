@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wan/common/GlobalConfig.dart';
 import 'package:flutter_wan/models/BannerModel.dart';
-import 'package:flutter_wan/view_models/BannerViewModel.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import 'action.dart';
@@ -17,7 +15,6 @@ Widget buildView(BannerState state, Dispatch dispatch, ViewService viewService) 
 
   PageController pageController;
 
-  BannerViewModel bannerVM = BannerViewModel();
   // bannerVM.requestResult(GlobalConfig.BANNER_URL, (isSuccess){
   //   if(isSuccess == true) {
   //     dispatch(BannerActionCreator.hadLoaded());

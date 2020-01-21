@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter_wan/home_page/banner_component/state.dart';
+import 'package:flutter_wan/models/BannerModel.dart';
 
 import 'action.dart';
 import 'state.dart';
@@ -13,7 +14,7 @@ Reducer<HomeState> buildReducer() {
 }
 
 HomeState _initBannersReducer(HomeState state, Action action) {
-  final List<BannerState> bannerResult = action.payload ?? <BannerState> [];
+  final List<BannerModel> bannerResult = action.payload ?? <BannerModel> [];
   final HomeState newState = state.clone();
   newState.bannerResult = bannerResult;
   return newState;

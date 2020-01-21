@@ -7,6 +7,7 @@ import 'package:flutter_wan/home_page/page.dart';
 import 'package:flutter_wan/localization/CustomLocalizations.dart';
 import 'package:flutter_wan/localization/CustomLocalizationsDelegate.dart';
 import 'package:flutter_wan/other_page/ScaffoldRoute.dart';
+import 'package:flutter_wan/other_page/webview_page/page.dart';
 
 void main() => runApp(MyApp());
 
@@ -61,7 +62,7 @@ Widget createApp() {
     //注册应用的页面 'todo_list' 、 'todo_edit'
     pages: <String, Page<Object, dynamic>>{
       'home': HomePage(),
-      'my': HomePage(),
+      'webView': WebviewPage(),
     },
     visitor:(String path, Page<Object, dynamic> page) {
       /// 只有特定的范围的 Page 才需要建立和 AppStore 的连接关系

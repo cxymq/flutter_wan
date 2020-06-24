@@ -12,10 +12,16 @@ Widget buildView(HomeListState state, Dispatch dispatch, ViewService viewService
       child: Row(children: <Widget>[
         Expanded(
           child: Container(
-            child: Text(
-              "111",
-              style: const TextStyle(color: Colors.black, fontSize: 16.0),
-            ),
+            child: Column (children: <Widget>[
+              Text(
+                state.articleListModel.title,
+                style: const TextStyle(color: Colors.black, fontSize: 16.0),
+              ),
+              Text(
+                state.articleListModel.author.length > 0 ? '作者' : '分享人',
+                style: const TextStyle(color: Colors.black, fontSize: 16.0),
+              )
+            ],)
           ),
         ),
         GestureDetector(
@@ -23,7 +29,7 @@ Widget buildView(HomeListState state, Dispatch dispatch, ViewService viewService
             child: const Icon(Icons.edit),
           ),
           onTap: () {
-            dispatch(HomeListActionCreator.onAction());
+            dispatch(HomeListActionCreator.onClickAction(state.articleListModel.link.length>0 ? state.articleListModel.link : ''));
           },
         )
       ],),

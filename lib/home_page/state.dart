@@ -3,8 +3,9 @@ import 'dart:ui';
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter_wan/global_store/state.dart';
 import 'package:flutter_wan/home_page/banner_component/state.dart';
-import 'package:flutter_wan/home_page/home_list_component/state.dart';
 import 'package:flutter_wan/models/BannerModel.dart';
+
+import 'home_cell_component/state.dart';
 
 class HomeState implements GlobalState {
 
@@ -18,7 +19,8 @@ class HomeState implements GlobalState {
   HomeState clone() {
     return HomeState()
     ..themeColor = themeColor
-    ..bannerResult = bannerResult;
+    ..bannerResult = bannerResult
+    ..homeList = homeList;
   }
 
 }

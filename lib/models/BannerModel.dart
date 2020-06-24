@@ -1,4 +1,6 @@
-class BannerModel {
+import 'package:flutter_wan/models/BaseModel.dart';
+
+class BannerModel extends BaseModel {
   String desc;
   int id;
   String imagePath;

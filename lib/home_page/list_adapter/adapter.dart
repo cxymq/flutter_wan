@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter_wan/home_page/home_list_component/component.dart';
+import 'package:flutter_wan/home_page/home_cell_component/component.dart';
+import 'package:flutter_wan/home_page/home_cell_component/state.dart';
 
 import '../state.dart';
 import 'reducer.dart';
@@ -18,17 +19,27 @@ class ListAdapter extends DynamicFlowAdapter<HomeState> {
 class _ListConnector extends ConnOp<HomeState, List<ItemBean>> {
   @override
   List<ItemBean> get(HomeState state) {
-    // return state.homeList.map(Home);
-    return <ItemBean>[];
+    if (state.homeList?.isNotEmpty == true) {
+      return state.homeList.map((HomeListState data) => ItemBean('homeList', data)).toList();
+    } else {
+      return <ItemBean>[];
+    }
   }
 
   @override
   void set(HomeState state, List<ItemBean> items) {
+    if (items?.isNotEmpty == true) {
+      state.homeList = List<HomeListState>.from(
+        items.map((ItemBean bean) => bean.data).toList()
+      );
+    } else {
+      state.homeList = <HomeListState>[];
+    }
   }
 
-  @override
-  subReducer(reducer) {
-    // TODO: implement subReducer
-    return super.subReducer(reducer);
-  }
+  // @override
+  // subReducer(reducer) {
+  //   // TODO: implement subReducer
+  //   return super.subReducer(reducer);
+  // }
 }

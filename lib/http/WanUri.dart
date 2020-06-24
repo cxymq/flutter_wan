@@ -20,7 +20,7 @@ class WanUri {
 
   /// 首页文章列表 http://www.wanandroid.com/article/list/0/json
   /// 知识体系下的文章 http://www.wanandroid.com/article/list/0/json?cid=60
-  static const String ARTICLE_LIST = "article/list";
+  static const String ARTICLE_LIST = "article/list/";
 
   /// 获取公众号列表 http://wanandroid.com/wxarticle/chapters/json
   static const String WXARTICLE_CHAPTERS = "wxarticle/chapters";

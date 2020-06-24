@@ -6,6 +6,7 @@ import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter_wan/common/GlobalConfig.dart';
 import 'package:flutter_wan/http/ResultCode.dart';
 import 'package:flutter_wan/http/WanUri.dart';
+import 'package:flutter_wan/utils/print_wan.dart';
 ///封装Dio请求
 class DioManager {
 
@@ -79,21 +80,21 @@ class DioManager {
 
        /// debug模式才打印
         if (GlobalConfig.isDebug) {
-          print('请求异常: ' + e.toString());
-          print('请求异常url: ' + url);
-          print('请求头: ' + dio.options.headers.toString());
-          print('method: ' + dio.options.method);
+          logger.e('请求异常: ' + e.toString());
+          logger.e('请求异常url: ' + url);
+          logger.e('请求头: ' + dio.options.headers.toString());
+          logger.e('method: ' + dio.options.method);
         }
     }
     /// debug模式打印相关数据
       if (GlobalConfig.isDebug) {
-        print('请求url: ' + url);
-        print('请求头: ' + dio.options.headers.toString());
+        logger.d('请求url: ' + url);
+        logger.d('请求头: ' + dio.options.headers.toString());
         if (params != null) {
-          print('请求参数: ' + params.toString());
+          logger.d('请求参数: ' + params.toString());
         }
         if (response != null) {
-          print('返回参数: ' + response.toString());
+          logger.d('返回参数: ' + response.toString());
         }
       }  
 

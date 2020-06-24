@@ -8,8 +8,8 @@ import 'view.dart';
 class BannerComponent extends Component<BannerState> {
   BannerComponent()
       : super(
-            // effect: buildEffect(),
-            // reducer: buildReducer(),
+            effect: buildEffect(),
+            reducer: buildReducer(),
             view: buildView,
       );
 

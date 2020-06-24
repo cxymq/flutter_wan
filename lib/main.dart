@@ -59,10 +59,10 @@ class MyApp extends StatelessWidget {
 Widget createApp() {
    //PageRoutes 是 fish_redux 提供的基本路由API，每个 page 都有独立的 store
   final AbstractRoutes routes = PageRoutes(
-    //注册应用的页面 'todo_list' 、 'todo_edit'
+    //注册应用的页面 '' 、 ''
     pages: <String, Page<Object, dynamic>>{
       'home': HomePage(),
-      'webView': WebviewPage(),
+      'web_view': WebviewPage(),
     },
     visitor:(String path, Page<Object, dynamic> page) {
       /// 只有特定的范围的 Page 才需要建立和 AppStore 的连接关系

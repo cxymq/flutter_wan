@@ -1,24 +1,33 @@
-import 'package:fish_redux/fish_redux.dart';
+import 'dart:ui';
 
-class WebviewState implements Cloneable<WebviewState> {
+import 'package:fish_redux/fish_redux.dart';
+import 'package:flutter_wan/global_store/state.dart';
+import 'package:flutter_wan/home_page/home_cell_component/state.dart';
+import 'package:flutter_wan/utils/print_wan.dart';
+
+class WebviewState implements GlobalBaseState, Cloneable<WebviewState> {
 
   String url;
   String title;
-
-  
-  // WebViewState({
-  // this.url,
-  // this.title
-  // });
 
   @override
   WebviewState clone() {
     return WebviewState()
     ..url
-    ..title;
+    ..title
+    ..themeColor;
   }
+
+  @override
+  Color themeColor;
 }
 
-WebviewState initState(Map<String, dynamic> args) {
-  return WebviewState();
+WebviewState initState(HomeListState args) {
+  WebviewState state = WebviewState();
+  // HomeListState homeState = args?.clone();
+  logger.d('initState***** ' + args.articleListModel.link);
+  state.url = args.articleListModel.link;
+  state.title = args.articleListModel.title;
+  logger.d('initState***** ' + state.title);
+  return state;
 }

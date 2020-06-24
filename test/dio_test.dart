@@ -2,6 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_wan/http/DioManager.dart';
+import 'package:flutter_wan/http/WanHttpRequest.dart';
 
 void main() {
   test('测试封装的Dio网络请求',(){

@@ -3,13 +3,23 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 
 class WebViewPlugin extends StatefulWidget {
+  List argus;
+  WebViewPlugin(this.argus);
+
   @override
   _WebViewPluginState createState() => _WebViewPluginState();
 }
 
 class _WebViewPluginState extends State<WebViewPlugin> {
   String url;
+  String title;
 
+  @override
+  void initState() {
+    super.initState();
+    url = widget.argus[0];
+    title = widget.argus[1];
+  }
   @override
   Widget build(BuildContext context) {
     return new WebviewScaffold(

@@ -1,6 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter/material.dart' hide Action;
+import 'package:flutter/material.dart' hide Action hide Page;
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_wan/Routs/Routs.dart';
 import 'package:flutter_wan/global_store/state.dart';
 import 'package:flutter_wan/global_store/store.dart';
 import 'package:flutter_wan/home_page/page.dart';
@@ -61,8 +62,8 @@ Widget createApp() {
   final AbstractRoutes routes = PageRoutes(
     //注册应用的页面 '' 、 ''
     pages: <String, Page<Object, dynamic>>{
-      'home': HomePage(),
-      'web_view': WebviewPage(),
+      Routes.home: HomePage(),
+      Routes.webView: WebviewPage(),
     },
     visitor:(String path, Page<Object, dynamic> page) {
       /// 只有特定的范围的 Page 才需要建立和 AppStore 的连接关系
@@ -120,7 +121,7 @@ Widget createApp() {
       primarySwatch: Colors.blue,
     ),
     //主页显示的page，根据'home'在routes中找到相应的page
-    home: routes.buildPage('home', null),
+    home: routes.buildPage(Routes.home, null),
     onGenerateRoute: (RouteSettings settings) {
       return MaterialPageRoute<Object>(builder: (BuildContext context) {
         return routes.buildPage(settings.name, settings.arguments);

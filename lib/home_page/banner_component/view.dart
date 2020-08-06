@@ -34,7 +34,7 @@ Widget buildView(BannerState state, Dispatch dispatch, ViewService viewService) 
               itemBuilder: (BuildContext context, int index) {
                 BannerModel bannerModel = state.bannerResult[index];
                 return InkWell(
-                  onTap:()=>dispatch(BannerActionCreator.onClickImg(bannerModel.url)),
+                  onTap:()=>dispatch(BannerActionCreator.onClickImg(bannerModel.url, bannerModel.title)),
                   child: FadeInImage.memoryNetwork(
                     image: bannerModel.imagePath, 
                     placeholder: kTransparentImage,

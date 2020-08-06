@@ -1,6 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter/material.dart' hide Action;
-import 'package:flutter_wan/utils/print_wan.dart';
+import 'package:flutter_wan/utils/navigator_util.dart';
 import 'action.dart';
 import 'state.dart';
 
@@ -11,13 +10,8 @@ Effect<HomeListState> buildEffect() {
 }
 
 void _onClick(Action action, Context<HomeListState> ctx) {
-  logger.d(ctx.state.articleListModel.link);
   if(action.payload == ctx.state.articleListModel.link) {
-    Navigator.of(ctx.context)
-    .pushNamed('web_view', arguments: ctx.state)
-    // .pushNamed('home')
-    .then((dynamic value) {
-      
-    });
+    NavigatorUtil.pushWebView(ctx.context, 
+    [ctx.state.articleListModel.link, ctx.state.articleListModel.title]);
   }
 }

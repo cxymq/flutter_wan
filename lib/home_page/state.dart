@@ -7,7 +7,7 @@ import 'package:flutter_wan/models/BannerModel.dart';
 
 import 'home_cell_component/state.dart';
 
-class HomeState implements GlobalState {
+class HomeState implements GlobalBaseState, Cloneable<HomeState> {
 
   List<BannerModel> bannerResult = List<BannerModel>();
   List<HomeListState> homeList = List<HomeListState>();

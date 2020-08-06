@@ -7,11 +7,11 @@ enum BannerAction {
  }
 
 class BannerActionCreator {
-  static Action onClickImg(String url) {
-    return Action(BannerAction.onClickImg, payload: url);
+  static Action onClickImg(String url, String title) {
+    return Action(BannerAction.onClickImg, payload: [url, title]);
   }
 
-  static Action clickImg(String url) {
+  static Action clickImg(String url, String title) {
     return const Action(BannerAction.clickImg);
   }
 

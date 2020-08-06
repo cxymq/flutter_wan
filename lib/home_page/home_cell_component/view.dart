@@ -12,14 +12,36 @@ Widget buildView(HomeListState state, Dispatch dispatch, ViewService viewService
       child: Row(children: <Widget>[
         Expanded(
           child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column (children: <Widget>[
-              Text(
-                state.articleListModel.title,
-                style: const TextStyle(color: Colors.black, fontSize: 16.0),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: Text(
+                  state.articleListModel.title,
+                  style: const TextStyle(color: Colors.black, fontSize: 16.0),
+                  textAlign: TextAlign.left,
+                ),
               ),
-              Text(
-                state.articleListModel.author.length > 0 ? '作者' : '分享人',
-                style: const TextStyle(color: Colors.black, fontSize: 16.0),
+              Padding(
+                padding: const EdgeInsets.all(0),
+                child:  Row (children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(right: 50),
+                    child: Text(
+                      state.articleListModel.author.length > 0 ? state.articleListModel.author : state.articleListModel.shareUser,
+                      style: const TextStyle(color: Colors.grey, fontSize: 14.0),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(0),
+                    child: Text(
+                      state.articleListModel.niceDate,
+                      style: const TextStyle(color: Colors.grey, fontSize: 14.0),
+                      textAlign: TextAlign.right,
+                    ),
+                  )
+                ],)
               )
             ],)
           ),
